@@ -73,11 +73,11 @@ cp config/database.yml.example config/database.yml
 git remote add upstream git@github.com:theforeman/foreman.git
 ....
 
-If you're using rbenv, now you can configure it to locally use Ruby 2.7:
+If you're using rbenv, now you can configure it to locally use Ruby 3.0:
 
 [source, bash]
 ....
-rbenv local 2.7.6
+rbenv local 3.0.2
 ....
 
 Now you can install the dependencies:
@@ -116,13 +116,6 @@ Set up database schema:
 bundle exec rake db:create # if not already created
 bundle exec rake db:migrate
 SEED_ADMIN_PASSWORD=changeme bundle exec rake db:seed
-....
-
-The previous commands will create databases only for the development environment, for test environment you need to run also:
-[source, ruby]
-....
-RAILS_ENV=test bundle exec rake db:create
-RAILS_ENV=test bundle exec rake db:migrate
 ....
 
 [[Running]]
